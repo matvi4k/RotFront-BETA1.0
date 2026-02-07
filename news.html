@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RotFront | Latest Updates &amp; News</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#0a0a0a",
+                        "card-bg": "#150a0a",
+                        "industrial-gray": "#392828",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .stencil-text {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 900;
+        }
+        .red-tint-img {
+            filter: grayscale(100%) brightness(0.8) contrast(1.2);
+            mix-blend-mode: multiply;
+        }
+        .red-overlay {
+            background-color: rgba(242, 13, 13, 0.2);
+            mix-blend-mode: overlay;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+        }
+        .pulse-border:hover {
+            box-shadow: 0 0 15px rgba(242, 13, 13, 0.5);
+            border-color: #f20d0d;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f20d0d;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Background Parallax Effect Simulation -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(30,0,0,1)_0%,_rgba(10,10,10,1)_100%)]"></div>
+<!-- Simulated Embers/Smoke -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary opacity-5 blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary opacity-5 blur-[150px]"></div>
+</div>
+<div class="relative z-10 flex min-h-screen">
+<!-- SIDEBAR -->
+<aside class="w-20 lg:w-64 border-r border-industrial-gray/50 bg-background-dark/80 backdrop-blur-md flex flex-col items-center py-8 sticky top-0 h-screen overflow-y-auto custom-scrollbar">
+<!-- Logo Section -->
+<div class="mb-12 flex items-center gap-3 px-6">
+<div class="bg-primary p-2 rounded text-white flex items-center justify-center">
+<span class="material-symbols-outlined font-bold">bolt</span>
+</div>
+<h1 class="hidden lg:block stencil-text text-xl tracking-tighter">ROTFRONT</h1>
+</div>
+<!-- Main Filter Navigation -->
+<nav class="flex-1 w-full space-y-2 px-4">
+<p class="hidden lg:block text-[10px] text-zinc-500 stencil-text mb-4 px-2">CATEGORIES</p>
+<button class="w-full flex items-center gap-4 px-4 py-3 bg-primary/10 border-l-4 border-primary text-primary transition-all group">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="hidden lg:block font-medium">All Intel</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 transition-all group border-l-4 border-transparent">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="hidden lg:block font-medium">Patches</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 transition-all group border-l-4 border-transparent">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="hidden lg:block font-medium">Dev Diaries</span>
+</button>
+<button class="w-full flex items-center gap-4 px-4 py-3 text-zinc-400 hover:text-white hover:bg-white/5 transition-all group border-l-4 border-transparent">
+<span class="material-symbols-outlined">groups</span>
+<span class="hidden lg:block font-medium">Community</span>
+</button>
+</nav>
+<!-- Social Links & Footer -->
+<div class="mt-auto w-full px-4 space-y-4">
+<div class="h-px bg-industrial-gray/50 w-full mb-6"></div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-2 text-zinc-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="hidden lg:block text-xs font-bold uppercase tracking-widest">Discord</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 text-zinc-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+<span class="hidden lg:block text-xs font-bold uppercase tracking-widest">X / Twitter</span>
+</a>
+</div>
+<div class="px-4 py-4 mt-4 hidden lg:block">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] text-zinc-500 stencil-text">System Online</span>
+</div>
+<p class="text-[9px] text-zinc-600">v0.8.4-BETA-BUILD-2024</p>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 p-6 lg:p-12">
+<!-- HEADER SECTION -->
+<header class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-0.5 bg-primary/20 text-primary text-[10px] font-bold stencil-text rounded">LIVE_FEED</span>
+<span class="h-px w-12 bg-industrial-gray"></span>
+</div>
+<h2 class="text-4xl lg:text-6xl stencil-text leading-none mb-4">LATEST UPDATES &amp; NEWS</h2>
+<p class="text-zinc-400 text-lg">Monitoring active operations, strategic intel, and development cycles in the RotFront sector.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-card-bg border border-industrial-gray/50 pl-10 pr-4 py-2 text-sm stencil-text focus:ring-1 focus:ring-primary focus:border-primary transition-all w-64 outline-none" placeholder="SEARCH INTEL..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/80 text-white font-bold py-2.5 px-6 rounded-none stencil-text transition-all text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">rss_feed</span>
+                        Subscribe
+                    </button>
+</div>
+</header>
+<!-- MASONRY NEWS GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-start">
+<!-- FEATURED CARD (Col Span 8, Row Span 2) -->
+<div class="lg:col-span-8 group relative overflow-hidden bg-card-bg border-4 border-industrial-gray/30 pulse-border transition-all cursor-pointer h-full min-h-[500px] flex flex-col">
+<div class="absolute inset-0 bg-cover bg-center red-tint-img opacity-60" data-alt="High contrast red-tinted military industrial landscape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD60DJHb19p9YZSv9qgruwvgSVvm-Px9p023NKeijXm_HIn8wPMwTgtYu-fcckX_ZMQs2jbqVWazMTZ_d63aWRVNIz1zef94l_9GMwyh8Ta-MUy7B5jypm3fV38wuq4jr3WDeKcpFqOHAFuZpCkRbUuCCY7KeoFmhZwSkrKRcHTJUD_L80PQ2heXjh6FTX6ftkhLh4tblvPn60hhqdWDOlS9kSnTN7LaFUIv5O8MM9Kr86XdB_tCifElfqfkQ6xiF9tnUgLj4dnFfo');"></div>
+<div class="absolute inset-0 red-overlay"></div>
+<div class="absolute inset-0 scanline pointer-events-none opacity-20"></div>
+<div class="relative z-10 mt-auto p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 stencil-text">FEATURED REPORT</span>
+<span class="text-zinc-400 text-xs stencil-text">[STRICTLY CONFIDENTIAL] 12.05.2024</span>
+</div>
+<h3 class="text-4xl lg:text-5xl stencil-text mb-4 leading-none group-hover:text-primary transition-colors">OPERATION: RED SKY OVERHAUL</h3>
+<p class="text-zinc-300 text-lg mb-6 max-w-2xl">A major strategic overhaul introducing new sectors, tactical hardware, and the much-awaited thermal shielding modules for all Tier-3 vehicles.</p>
+<button class="inline-flex items-center gap-2 text-white border-b-2 border-primary pb-1 font-bold stencil-text hover:gap-4 transition-all">
+                            READ FULL INTEL
+                            <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- SIDE CARD 1 (Col Span 4) -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-card-bg border-2 border-industrial-gray/30 pulse-border transition-all cursor-pointer flex flex-col h-[280px]">
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-alt="Close up of futuristic machinery and wiring" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZT_mjHY9-jRGdhECNM1CZxK9-B5kunTy4gN7KQGZdxnZZxkxoBUAufc8kCs-GucIat0TJCMSjv1qXOUYsn7uGQPgLhd7MY6lUo29ONLpFbWM9W9VLUNDNC8Nq6SSYYMcpYUwK0fnxP4SKOKUgqmOIWJOytJDGRmfiUe6GMZ-dTNEFypFHsIUAExIkcAytDZAWPa9XQZ-rYGSn06qgVee21OQJd5l6a7X8GKBodkEaX73a3hCajY1ty55qtisOrxdhofhD7Wro1fY');"></div>
+<div class="absolute inset-0 scanline pointer-events-none opacity-30"></div>
+<span class="absolute top-4 left-4 bg-industrial-gray/80 backdrop-blur-sm text-[10px] font-bold px-2 py-0.5 stencil-text text-white">PATCH_V0.8.2</span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<h4 class="text-lg stencil-text leading-tight group-hover:text-primary transition-colors">WEAPONRY STABILITY HOTFIX</h4>
+<div class="flex justify-between items-center mt-4">
+<span class="text-zinc-500 text-[10px] stencil-text">11.02.2024</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-all">read_more</span>
+</div>
+</div>
+</div>
+<!-- SIDE CARD 2 (Col Span 4) -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-card-bg border-2 border-industrial-gray/30 pulse-border transition-all cursor-pointer flex flex-col h-[280px]">
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center grayscale brightness-50" data-alt="High-tech blueprint display with glowing red lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGFHluG6AaGBcoDcKSin2KB7KxxjoRECE_RwkHoiiKW_UpH9lDV9hEzm0kwBySbteFTW40fPwlFUUviDFQeRWiWSlp-ymfAHh-YF5f5XsV2mfhyMfaIGoJ65AbYhtVkmxMi87kjluq8x44GdGMsjLjO9XJHNSHryEMZGmaAEqefbukjtFtYLTvS_B01fUmrFPMigLOdT8LzKWGW56PoxtpJNZo9Tsyepwqedkb7Pg09JDeeOmCGDLe6WDs-Sj1H8R7pFxMZ7jm-YQ');"></div>
+<div class="absolute inset-0 bg-primary/10"></div>
+<span class="absolute top-4 left-4 bg-industrial-gray/80 backdrop-blur-sm text-[10px] font-bold px-2 py-0.5 stencil-text text-white">DEV_LOG</span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<h4 class="text-lg stencil-text leading-tight group-hover:text-primary transition-colors">LOG #14: NEURAL LINKING</h4>
+<div class="flex justify-between items-center mt-4">
+<span class="text-zinc-500 text-[10px] stencil-text">10.28.2024</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-all">read_more</span>
+</div>
+</div>
+</div>
+<!-- SECONDARY GRID SECTION -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-card-bg border-2 border-industrial-gray/30 pulse-border transition-all cursor-pointer flex flex-col h-[380px]">
+<div class="h-full relative p-8 flex flex-col">
+<div class="absolute inset-0 bg-cover bg-center opacity-20" data-alt="Retro computer workstation in a dark room" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9djpgc-sWgtxZd1QcCog3TsapAj1R3g7PQYunuQAfljNvaGWtRu1N0rOOnXHraGc-MFVbnz-D1TXYO_fPKsIUgQhd6hF3MBPnyOMt8AMtyHrMiKBuGzRj2232XlWtbJPnwYPdQyVOsvzs5lJqSajDkmld6cFvDaP9I9yakLeCmZBBm7gVAxV8t-SpBRw0R1e2S6_TJ__bAhO2FXmWZdnoGmG-ePl9rWrJ4yzQdxmHIOaeup1vFhBAeIBS6MioyDADg8lpf1mVu9M');"></div>
+<span class="inline-block self-start bg-zinc-800 text-white text-[10px] font-bold px-2 py-0.5 stencil-text mb-4">COMMUNITY</span>
+<h4 class="text-2xl stencil-text leading-none mt-auto mb-4 group-hover:text-primary transition-colors">FAN ART CONTEST: RED SECTOR REBELS</h4>
+<p class="text-zinc-400 text-sm mb-6">Submit your best interpretations of the Red Sector rebellion for a chance to be featured in the game's loading screens.</p>
+<div class="flex justify-between items-center">
+<span class="text-zinc-500 text-[10px] stencil-text">10.15.2024</span>
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 stencil-text">JOIN NOW</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 group relative overflow-hidden bg-card-bg border-2 border-industrial-gray/30 pulse-border transition-all cursor-pointer flex flex-col md:flex-row h-[380px]">
+<div class="md:w-1/2 h-full relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale group-hover:scale-110 transition-transform duration-700" data-alt="Group of soldiers in tactical gear walking through smoke" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgjHqzEXlYwKXPUatvIIb2Yk1ciH1quuC4EzxrNfJ7FEcH6DJXWpCAPe1dXIq9E9rsqsC1E2DmaBhUJ5jeVQd3mRzaGlxmbIMOVDUSn_83YiMnk9U-OTgH7oA_TvZFomEhaHOzuOliyf72SqOVlFQsRkPZBLlQb3IzLTaG6XUxRwGnaK0GMzoofg-PM6aZVrEsAmBeK3tz89dTP7ihGfshb8N53JTZJQc-XjAKz4k6imC_0rrwDJIIwG_N1BlQk-eqz1Zul3ozS7o');"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-card-bg hidden md:block"></div>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<span class="text-primary text-[10px] font-bold stencil-text mb-2">SITUATION REPORT</span>
+<h4 class="text-2xl lg:text-3xl stencil-text leading-tight mb-4 group-hover:text-primary transition-colors">CO-OP CAMPAIGN EXPANSION</h4>
+<p class="text-zinc-400 text-sm mb-6">New multi-stage missions are now available for fireteams of up to 4 players. Survive the deep tunnels of Sector-9.</p>
+<div class="flex items-center gap-4">
+<span class="text-zinc-500 text-[10px] stencil-text">10.12.2024</span>
+<span class="h-px flex-1 bg-industrial-gray/30"></span>
+<span class="material-symbols-outlined text-primary">play_circle</span>
+</div>
+</div>
+</div>
+<!-- MORE MINI CARDS -->
+<div class="lg:col-span-3 group bg-card-bg border border-industrial-gray/30 pulse-border p-6 transition-all cursor-pointer">
+<span class="text-[9px] font-bold stencil-text text-zinc-500 mb-2 block tracking-widest">SYSTEM_ALERT</span>
+<h5 class="stencil-text text-sm mb-3 group-hover:text-primary transition-colors">SERVER MAINTENANCE WINDOW</h5>
+<p class="text-zinc-500 text-xs">Offline operations scheduled for 04:00 UTC, 12.10.2024.</p>
+</div>
+<div class="lg:col-span-3 group bg-card-bg border border-industrial-gray/30 pulse-border p-6 transition-all cursor-pointer">
+<span class="text-[9px] font-bold stencil-text text-zinc-500 mb-2 block tracking-widest">COMM_UPDATE</span>
+<h5 class="stencil-text text-sm mb-3 group-hover:text-primary transition-colors">MODERATOR APPLICATIONS OPEN</h5>
+<p class="text-zinc-500 text-xs">Help secure our digital front lines. Apply via Discord.</p>
+</div>
+<div class="lg:col-span-3 group bg-card-bg border border-industrial-gray/30 pulse-border p-6 transition-all cursor-pointer">
+<span class="text-[9px] font-bold stencil-text text-zinc-500 mb-2 block tracking-widest">TECH_DIARY</span>
+<h5 class="stencil-text text-sm mb-3 group-hover:text-primary transition-colors">OPTIMIZING THE VOX ENGINE</h5>
+<p class="text-zinc-500 text-xs">How we improved spatial audio for underground combat.</p>
+</div>
+<div class="lg:col-span-3 group bg-card-bg border border-industrial-gray/30 pulse-border p-6 transition-all cursor-pointer">
+<span class="text-[9px] font-bold stencil-text text-zinc-500 mb-2 block tracking-widest">STORE_FRONT</span>
+<h5 class="stencil-text text-sm mb-3 group-hover:text-primary transition-colors">ELITE FOUNDER BUNDLES</h5>
+<p class="text-zinc-500 text-xs">Limited supply of prototype equipment skins available.</p>
+</div>
+</div>
+<!-- LOAD MORE FOOTER -->
+<div class="mt-16 flex flex-col items-center">
+<div class="w-full h-px bg-industrial-gray/30 mb-8 relative">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background-dark px-6 text-[10px] text-zinc-500 stencil-text">END OF TRANSMISSION</div>
+</div>
+<button class="group flex flex-col items-center gap-2 hover:text-primary transition-colors">
+<span class="stencil-text font-bold text-sm">LOAD OLDER INTEL</span>
+<span class="material-symbols-outlined animate-bounce">keyboard_double_arrow_down</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Interactive Bottom Status Bar (Desktop) -->
+<div class="fixed bottom-0 left-0 right-0 bg-primary/90 text-white text-[10px] font-bold stencil-text px-4 py-1 z-50 flex justify-between items-center backdrop-blur-sm pointer-events-none lg:pointer-events-auto">
+<div class="flex gap-6 items-center">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">sensors</span> LINK_ESTABLISHED</span>
+<span class="hidden md:inline">LATENCY: 24MS</span>
+<span class="hidden md:inline">ENCRYPTION: AES-256</span>
+</div>
+<div class="flex gap-4 items-center overflow-hidden whitespace-nowrap">
+<div class="animate-pulse">SCANNED SECTOR: X-22-ALPHA</div>
+<div class="hidden lg:block h-3 w-px bg-white/30"></div>
+<div class="hidden lg:block">TERMINAL: ROTFRONT-BETA-01</div>
+</div>
+</div>
+</body></html>
