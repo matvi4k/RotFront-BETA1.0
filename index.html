@@ -1,334 +1,661 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>RotFront - Cybernetic Uprising</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#f20d0d",
-                        "background-light": "#f8f5f5",
-                        "background-dark": "#0a0a0a",
-                        "surface-dark": "#1a0f0f",
-                        "border-dark": "#392828",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RotFront - Cybernetic Uprising</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f20d0d",
+              "background-light": "#f8f5f5",
+              "background-dark": "#0a0a0a",
+              "surface-dark": "#1a0f0f",
+              "border-dark": "#392828",
             },
-        }
+            fontFamily: {
+              display: ["Space Grotesk", "Oswald"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
-<style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-image: 
-                linear-gradient(rgba(242, 13, 13, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(242, 13, 13, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        
-        .glitch-text {
-            position: relative;
-            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
-        }
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Space Grotesk", Oswald;
+        background-image:
+          linear-gradient(rgba(242, 13, 13, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(242, 13, 13, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        cursor: default;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10+ и Edge */
+        user-select: none;
+      }
 
-        .cta-glow:hover {
-            box-shadow: 0 0 20px rgba(242, 13, 13, 0.6);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
+      .glitch-text {
+        position: relative;
+        text-shadow:
+          0.05em 0 0 #00fffc,
+          -0.03em -0.04em 0 #fc00ff,
+          0.025em 0.04em 0 #fffc00;
+      }
 
-        .mechanic-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            perspective: 1000px;
-        }
+      .cta-glow:hover {
+        box-shadow: 0 0 20px rgba(242, 13, 13, 0.6);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+      }
 
-        .mechanic-card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            border-color: #f20d0d;
-            box-shadow: 0 10px 30px -10px rgba(242, 13, 13, 0.4);
-        }
+      .mechanic-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        perspective: 1000px;
+      }
 
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1a0f0f;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #f20d0d;
-        }
+      .mechanic-card:hover {
+        transform: translateY(-10px) rotateX(5deg);
+        border-color: #f20d0d;
+        box-shadow: 0 10px 30px -10px rgba(242, 13, 13, 0.4);
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #1a0f0f;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #f20d0d;
+      }
+      .russian-text {
+        font-family: "Oswald", sans-serif;
+      }
     </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen overflow-x-hidden selection:bg-primary selection:text-white">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-border-dark px-6 lg:px-20 py-4">
-<div class="max-w-7xl mx-auto flex items-center justify-between">
-<div class="flex items-center gap-3 group cursor-pointer">
-<div class="bg-primary p-1.5 rounded">
-<span class="material-symbols-outlined text-white text-2xl font-bold">bolt</span>
-</div>
-<h2 class="text-white text-2xl font-bold tracking-tighter uppercase font-display">
-                    Rot<span class="text-primary">Front</span>
-</h2>
-</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="./news.html">Archive</a>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Mechanics</a>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Roadmap</a>
-<a class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest flex items-center gap-1" href="#">
-                    Discord <span class="material-symbols-outlined text-xs">open_in_new</span>
-</a>
-</nav>
-<button class="bg-primary text-white px-6 py-2 rounded font-bold uppercase tracking-wider text-sm cta-glow">
-                Join Beta
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen overflow-x-hidden selection:bg-primary selection:text-white"
+  >
+    <!-- Top Navigation Bar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-border-dark px-6 lg:px-20 py-4"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3 group cursor-pointer">
+          <div class="bg-primary p-1.5 rounded">
+            <span
+              class="material-symbols-outlined text-white text-2xl font-bold"
+              >bolt</span
+            >
+          </div>
+          <h2
+            class="text-white text-2xl font-bold tracking-tighter uppercase font-display"
+          >
+            Rot<span class="text-primary">Front</span>
+          </h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-10">
+          <a
+            class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" target="_blank"
+            href="./news.html" 
+            >Новости</a
+          >
+          <a
+            class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+            href="#mehanics"
+            >Механики</a
+          >
+          <a
+            class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+            href="#"
+            >Карта</a
+          >
+          <a
+            class="text-white/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest flex items-center gap-1 russian-text" target="_blank"
+            href="https://discord.gg/5EHndyfHA8"
+          >
+            Discord
+            <span class="material-symbols-outlined text-xs">open_in_new</span>
+          </a>
+        </nav>
+        <button
+          class="bg-primary text-white px-6 py-2 rounded font-bold uppercase tracking-wider text-sm cta-glow russian-text"
+        >
+          Присоединяйтесь к бете
+        </button>
+      </div>
+    </header>
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden"
+      >
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 opacity-20">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]"
+          ></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 mb-8"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+              ></span>
+            </span>
+            <span
+              class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase"
+              >Phase 1.0 Deployment Active</span
+            >
+          </div>
+          <h1
+            class="glitch-text text-white text-7xl md:text-9xl font-black leading-none tracking-tighter uppercase mb-6 font-display"
+          >
+            ROT<br class="md:hidden" />FRONT
+          </h1>
+          <p
+            class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+          >
+            Восстание начинается в бета-версии. Станьте участником
+            кибернетического восстания с высокими ставками, где каждое
+            тактическое решение определяет судьбу подземелья.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <button
+              class="bg-primary text-white px-10 py-4 rounded font-black uppercase tracking-widest text-lg cta-glow flex items-center gap-3"
+            >
+              Присоединиться
+              <span class="material-symbols-outlined">double_arrow</span>
             </button>
-</div>
-</header>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden">
-<!-- Background Elements -->
-<div class="absolute inset-0 z-0 opacity-20">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]"></div>
-</div>
-<div class="relative z-10 text-center max-w-4xl mx-auto">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 mb-8">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-<span class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">Phase 1.0 Deployment Active</span>
-</div>
-<h1 class="glitch-text text-white text-7xl md:text-9xl font-black leading-none tracking-tighter uppercase mb-6 font-display">
-                    ROT<br class="md:hidden"/>FRONT
-                </h1>
-<p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                    The Rebellion Begins in Beta. Experience a high-stakes cybernetic uprising where every tactical decision dictates the fate of the underground.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-<button class="bg-primary text-white px-10 py-4 rounded font-black uppercase tracking-widest text-lg cta-glow flex items-center gap-3">
-                        Join the Front <span class="material-symbols-outlined">double_arrow</span>
-</button>
-<button class="border border-white/20 text-white px-10 py-4 rounded font-black uppercase tracking-widest text-lg hover:bg-white/5 transition-all">
-                        View Dossier
-                    </button>
-</div>
-</div>
-<!-- Hero Footer Stats -->
-<div class="absolute bottom-10 left-0 w-full px-6 lg:px-20">
-<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-t border-white/10 pt-10">
-<div class="flex flex-col gap-1">
-<span class="text-white/40 text-[10px] font-bold tracking-widest uppercase">System Load</span>
-<span class="text-white text-xl font-display font-bold uppercase">Critical 84%</span>
-<div class="w-full bg-border-dark h-1 rounded-full mt-2 overflow-hidden">
-<div class="bg-primary h-full w-[84%]"></div>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<span class="text-white/40 text-[10px] font-bold tracking-widest uppercase">Active Rebels</span>
-<span class="text-white text-xl font-display font-bold uppercase">12,402</span>
-<span class="text-green-500 text-[10px] font-bold">+15% vs yesterday</span>
-</div>
-<div class="flex flex-col gap-1">
-<span class="text-white/40 text-[10px] font-bold tracking-widest uppercase">Node Status</span>
-<span class="text-white text-xl font-display font-bold uppercase">Synchronized</span>
-<span class="text-primary text-[10px] font-bold">ENCRYPTED</span>
-</div>
-<div class="flex flex-col gap-1">
-<span class="text-white/40 text-[10px] font-bold tracking-widest uppercase">Location</span>
-<span class="text-white text-xl font-display font-bold uppercase" data-location="Neo-Berlin">Neo-Berlin</span>
-<span class="text-white/40 text-[10px] font-bold">SECTOR 7-B</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Progress Section -->
-<section class="py-20 px-6 lg:px-20 bg-surface-dark/50 border-y border-border-dark">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-<div>
-<h2 class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Development Protocol</h2>
-<h3 class="text-white text-4xl font-bold font-display uppercase tracking-tight">Beta Status Report</h3>
-</div>
-<p class="text-white/50 max-w-md text-sm italic">
-                        "The network is fragile, but our resolve is absolute. We are approaching 90% deployment for the final tactical grid."
-                    </p>
-</div>
-<div class="bg-background-dark p-8 rounded-xl border border-border-dark relative overflow-hidden">
-<div class="flex justify-between items-center mb-6">
-<span class="text-white font-bold font-display tracking-widest uppercase">Mainnet Deployment Status</span>
-<span class="text-primary font-black text-2xl font-display">84%</span>
-</div>
-<div class="h-4 w-full bg-border-dark rounded-full overflow-hidden flex gap-1 p-0.5">
-<div class="bg-primary h-full w-2/3 rounded-sm"></div>
-<div class="bg-primary/60 h-full w-[15%] rounded-sm"></div>
-<div class="bg-primary/20 h-full w-[3%] rounded-sm animate-pulse"></div>
-</div>
-<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-surface-dark border border-border-dark p-4 rounded flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<div>
-<p class="text-white text-xs font-bold uppercase">Kernel Sync</p>
-<p class="text-white/50 text-[10px]">VERIFIED</p>
-</div>
-</div>
-<div class="bg-surface-dark border border-border-dark p-4 rounded flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">check_circle</span>
-<div>
-<p class="text-white text-xs font-bold uppercase">P2P Network</p>
-<p class="text-white/50 text-[10px]">VERIFIED</p>
-</div>
-</div>
-<div class="bg-surface-dark border border-primary/40 p-4 rounded flex items-center gap-4">
-<span class="material-symbols-outlined text-primary animate-spin">sync</span>
-<div>
-<p class="text-white text-xs font-bold uppercase">Asset Stream</p>
-<p class="text-primary text-[10px]">SYNCHRONIZING...</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Mechanics Grid -->
-<section class="py-32 px-6 lg:px-20 relative">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-20">
-<h2 class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Operational Protocols</h2>
-<h3 class="text-white text-5xl font-bold font-display uppercase">Game Mechanics</h3>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Mechanic Card 1 -->
-<div class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group">
-<div class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined text-4xl">terminal</span>
-</div>
-<h4 class="text-white text-2xl font-bold font-display uppercase tracking-tight">System Overload</h4>
-<p class="text-white/60 leading-relaxed font-light">
-                            Hijack corporate infrastructure to trigger massive network spikes. Turn the city's power grid into your ultimate tactical advantage.
-                        </p>
-<div class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between">
-<span class="text-primary text-[10px] font-bold tracking-widest uppercase">High Stakes</span>
-<span class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
-</div>
-</div>
-<!-- Mechanic Card 2 -->
-<div class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group">
-<div class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined text-4xl">security_update_warning</span>
-</div>
-<h4 class="text-white text-2xl font-bold font-display uppercase tracking-tight">Tactical Breach</h4>
-<p class="text-white/60 leading-relaxed font-light">
-                            Coordinate with your squad to execute precision breaches on secure facilities. Silent entry or loud chaos—the choice is yours.
-                        </p>
-<div class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between">
-<span class="text-primary text-[10px] font-bold tracking-widest uppercase">Squad Based</span>
-<span class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
-</div>
-</div>
-<!-- Mechanic Card 3 -->
-<div class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group">
-<div class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all">
-<span class="material-symbols-outlined text-4xl">hub</span>
-</div>
-<h4 class="text-white text-2xl font-bold font-display uppercase tracking-tight">Neural Link</h4>
-<p class="text-white/60 leading-relaxed font-light">
-                            Augment your cognitive processing with illegal neuralware. Experience hyper-awareness and slow down time during intense combat.
-                        </p>
-<div class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between">
-<span class="text-primary text-[10px] font-bold tracking-widest uppercase">Cybernetic</span>
-<span class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-24 px-6 lg:px-20">
-<div class="max-w-7xl mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-surface-dark border border-primary/30 p-12 md:p-24 text-center">
-<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="Abstract cybernetic circuit pattern background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7utwoQGWSlLBuVgWaKqPycIV5cNyrlp7aNwtGcz6f6c6IkShEHnQTGvWhVEPjybpi28utvcTgi0HICXwPGfoZE0uoO94GkW5zmzSz3-prsddQ-S5fzzwCDqPJ-ACL3dsB788-EDU2o4xx-3GAsOPqQGp0fGdJGywbBHCG83141mSKbA9JJA9LEVoXMmErHE_GsJLVhedRbTOd_DSOnH8rpB_TUivlU4ep_pElB-5DMn_0eXKYU6tMH2ZqmcQfZ2m7pAQj-NWecDI'); background-size: cover; background-position: center;"></div>
-<h2 class="text-white text-4xl md:text-6xl font-black font-display uppercase mb-8 tracking-tighter">Ready to Break the System?</h2>
-<p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-                    Alpha access slots are limited. Secure your place in the rebellion and help shape the future of RotFront.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary text-white px-12 py-5 rounded font-black uppercase tracking-widest text-xl cta-glow">
-                        Join the Beta Now
-                    </button>
-<button class="bg-white/10 text-white px-12 py-5 rounded font-black uppercase tracking-widest text-xl hover:bg-white/20 transition-all border border-white/10 backdrop-blur-sm">
-                        Access Intel
-                    </button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-background-dark border-t border-border-dark px-6 lg:px-20 py-16">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="md:col-span-1">
-<div class="flex items-center gap-3 mb-6">
-<div class="bg-primary p-1.5 rounded">
-<span class="material-symbols-outlined text-white text-xl font-bold">bolt</span>
-</div>
-<h2 class="text-white text-xl font-bold tracking-tighter uppercase font-display">
-                        Rot<span class="text-primary">Front</span>
-</h2>
-</div>
-<p class="text-white/40 text-sm leading-relaxed mb-6">
-                    A cyber-uprising simulation focused on tactical strategy and systemic rebellion.
-                </p>
-<div class="flex gap-4">
-<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
-<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">forum</span></a>
-<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">videocam</span></a>
-</div>
-</div>
-<div class="md:col-span-1">
-<h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Manifesto</h4>
-<ul class="flex flex-col gap-4">
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Our Vision</a></li>
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Lore Codex</a></li>
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Character Origin</a></li>
-</ul>
-</div>
-<div class="md:col-span-1">
-<h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Technical</h4>
-<ul class="flex flex-col gap-4">
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Bug Bounty</a></li>
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">System Requirements</a></li>
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Beta Patch Notes</a></li>
-</ul>
-</div>
-<div class="md:col-span-1">
-<h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Legal</h4>
-<ul class="flex flex-col gap-4">
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Protocol Rules</a></li>
-<li><a class="text-white/40 hover:text-white text-sm transition-colors" href="#">Privacy Encryption</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto border-t border-border-dark mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/20 text-xs uppercase tracking-widest">© 2026 RotFront Tactical Systems. All rights encrypted.</p>
-<div class="flex gap-8">
-<span class="text-primary text-[10px] font-bold uppercase tracking-widest">Signal Stable</span>
-<span class="text-white/20 text-[10px] font-bold uppercase tracking-widest">Version b1.0.00</span>
-</div>
-</div>
-</footer>
-</body></html>
+            <button
+              class="border border-white/20 text-white px-10 py-4 rounded font-black uppercase tracking-widest text-lg hover:bg-white/5 transition-all"
+            >
+              Подробнее
+            </button>
+          </div>
+        </div>
+        <!-- Hero Footer Stats -->
+        <div class="absolute bottom-10 left-0 w-full px-6 lg:px-20">
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-t border-white/10 pt-10"
+          >
+            <div class="flex flex-col gap-1">
+              <span
+                class="text-white/40 text-[10px] font-bold tracking-widest uppercase"
+                >Загрука системы</span
+              >
+              <span class="text-white text-xl font-display font-bold uppercase"
+                >Critical 84%</span
+              >
+              <div
+                class="w-full bg-border-dark h-1 rounded-full mt-2 overflow-hidden"
+              >
+                <div class="bg-primary h-full w-[84%]"></div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span
+                class="text-white/40 text-[10px] font-bold tracking-widest uppercase"
+                >Активные повстанцы</span
+              >
+              <span class="text-white text-xl font-display font-bold uppercase"
+                >12,402</span
+              >
+              <span class="text-green-500 text-[10px] font-bold"
+                >+15% vs yesterday</span
+              >
+            </div>
+            <div class="flex flex-col gap-1">
+              <span
+                class="text-white/40 text-[10px] font-bold tracking-widest uppercase"
+                >Статус сервера</span
+              >
+              <span class="text-white text-xl font-display font-bold uppercase"
+                >Синхронизировано</span
+              >
+              <span class="text-primary text-[10px] font-bold"
+                >ЗАШИФРОВАННЫЙ</span
+              >
+            </div>
+            <div class="flex flex-col gap-1">
+              <span
+                class="text-white/40 text-[10px] font-bold tracking-widest uppercase"
+                >Расположение</span
+              >
+              <span
+                class="text-white text-xl font-display font-bold uppercase"
+                data-location="Neo-Berlin"
+                >Нео-Берлин</span
+              >
+              <span class="text-white/40 text-[10px] font-bold"
+                >СЕКТОР 7-В</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Progress Section -->
+      <section
+        class="py-20 px-6 lg:px-20 bg-surface-dark/50 border-y border-border-dark"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+          >
+            <div>
+              <h2
+                class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4"
+              >
+                Протокол развития
+              </h2>
+              <h3
+                class="text-white text-4xl font-bold font-display uppercase tracking-tight"
+              >
+                Отчет о состоянии бета-версии
+              </h3>
+            </div>
+            <p class="text-white/50 max-w-md text-sm italic">
+              "Сеть хрупкая, но наша решимость абсолютна. Мы приближаемся к 90%
+              развертыванию последней тактической сетки."
+            </p>
+          </div>
+          <div
+            class="bg-background-dark p-8 rounded-xl border border-border-dark relative overflow-hidden"
+          >
+            <div class="flex justify-between items-center mb-6">
+              <span
+                class="text-white font-bold font-display tracking-widest uppercase"
+                >Статус развертывания основной сети</span
+              >
+              <span class="text-primary font-black text-2xl font-display"
+                >84%</span
+              >
+            </div>
+            <div
+              class="h-4 w-full bg-border-dark rounded-full overflow-hidden flex gap-1 p-0.5"
+            >
+              <div class="bg-primary h-full w-2/3 rounded-sm"></div>
+              <div class="bg-primary/60 h-full w-[15%] rounded-sm"></div>
+              <div
+                class="bg-primary/20 h-full w-[3%] rounded-sm animate-pulse"
+              ></div>
+            </div>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="bg-surface-dark border border-border-dark p-4 rounded flex items-center gap-4"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <div>
+                  <p class="text-white text-xs font-bold uppercase">
+                    Синхронизация ядра
+                  </p>
+                  <p class="text-white/50 text-[10px]">ПРОВЕРЕНО</p>
+                </div>
+              </div>
+              <div
+                class="bg-surface-dark border border-border-dark p-4 rounded flex items-center gap-4"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <div>
+                  <p class="text-white text-xs font-bold uppercase">Р2Р-сеть</p>
+                  <p class="text-white/50 text-[10px]">ПРОВЕРЕНО</p>
+                </div>
+              </div>
+              <div
+                class="bg-surface-dark border border-primary/40 p-4 rounded flex items-center gap-4"
+              >
+                <span
+                  class="material-symbols-outlined text-primary animate-spin"
+                  >sync</span
+                >
+                <div>
+                  <p class="text-white text-xs font-bold uppercase">
+                    Поток активов
+                  </p>
+                  <p class="text-primary text-[10px]">СИНХРОНИЗАЦИЯ...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mechanics Grid -->
+      <section id="mehanics" class="py-32 px-6 lg:px-20 relative">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20">
+            <h2
+              class="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4"
+            >
+              Операционные протоколы
+            </h2>
+            <h3 class="text-white text-5xl font-bold font-display uppercase">
+              Игровая механика
+            </h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Mechanic Card 1 -->
+            <div
+              class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group"
+            >
+              <div
+                class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-4xl">terminal</span>
+              </div>
+              <h4
+                class="text-white text-2xl font-bold font-display uppercase tracking-tight"
+              >
+                Перегрузка системы
+              </h4>
+              <p class="text-white/60 leading-relaxed font-light">
+                Взломайте корпоративную инфраструктуру, чтобы вызвать массовые
+                скачки напряжения в сети. Превратите городскую энергосистему в
+                свое главное тактическое преимущество.
+              </p>
+              <div
+                class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <span
+                  class="text-primary text-[10px] font-bold tracking-widest uppercase"
+                  >Высокие ставки</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+            <!-- Mechanic Card 2 -->
+            <div
+              class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group"
+            >
+              <div
+                class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-4xl"
+                  >security_update_warning</span
+                >
+              </div>
+              <h4
+                class="text-white text-2xl font-bold font-display uppercase tracking-tight"
+              >
+                Тактическое нарушение
+              </h4>
+              <p class="text-white/60 leading-relaxed font-light">
+                Координируйте свои действия со своим отрядом, чтобы совершать
+                точные нарушения безопасности на охраняемых объектах. Тихий вход
+                или громкий хаос — выбор за вами.
+              </p>
+              <div
+                class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <span
+                  class="text-primary text-[10px] font-bold tracking-widest uppercase"
+                  >На основе отряда</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+            <!-- Mechanic Card 3 -->
+            <div
+              class="mechanic-card bg-surface-dark border border-border-dark rounded-xl p-8 flex flex-col gap-6 group"
+            >
+              <div
+                class="size-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all"
+              >
+                <span class="material-symbols-outlined text-4xl">hub</span>
+              </div>
+              <h4
+                class="text-white text-2xl font-bold font-display uppercase tracking-tight"
+              >
+                Нейралинк
+              </h4>
+              <p class="text-white/60 leading-relaxed font-light">
+                Дополните свою когнитивную обработку нелегальными нейронными
+                программами. Испытайте повышенную осознанность и замедлите время
+                во время интенсивного боя.
+              </p>
+              <div
+                class="mt-auto pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <span
+                  class="text-primary text-[10px] font-bold tracking-widest uppercase"
+                  >Кибернетический</span
+                >
+                <span
+                  class="material-symbols-outlined text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-24 px-6 lg:px-20">
+        <div
+          class="max-w-7xl mx-auto relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-surface-dark border border-primary/30 p-12 md:p-24 text-center"
+        >
+          <div
+            class="absolute inset-0 opacity-10 pointer-events-none"
+            data-alt="Abstract cybernetic circuit pattern background"
+            style="
+              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD7utwoQGWSlLBuVgWaKqPycIV5cNyrlp7aNwtGcz6f6c6IkShEHnQTGvWhVEPjybpi28utvcTgi0HICXwPGfoZE0uoO94GkW5zmzSz3-prsddQ-S5fzzwCDqPJ-ACL3dsB788-EDU2o4xx-3GAsOPqQGp0fGdJGywbBHCG83141mSKbA9JJA9LEVoXMmErHE_GsJLVhedRbTOd_DSOnH8rpB_TUivlU4ep_pElB-5DMn_0eXKYU6tMH2ZqmcQfZ2m7pAQj-NWecDI&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          ></div>
+          <h2
+            class="text-white text-4xl md:text-6xl font-black font-display uppercase mb-8 tracking-tighter"
+          >
+            Готов сломать систему?
+          </h2>
+          <p
+            class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 russian-text"
+          >
+            Количество слотов доступа к Альфе ограничено. Закрепите свое место в
+            восстании и помогите сформировать будущее RotFront.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              class="bg-primary text-white px-12 py-5 rounded font-black uppercase tracking-widest text-xl cta-glow"
+            >
+              Присоединяйтесь к Бете сейчас
+            </button>
+            <button
+              class="bg-white/10 text-white px-12 py-5 rounded font-black uppercase tracking-widest text-xl hover:bg-white/20 transition-all border border-white/10 backdrop-blur-sm"
+            >
+              Доступ к информации
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-background-dark border-t border-border-dark px-6 lg:px-20 py-16"
+    >
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-primary p-1.5 rounded">
+              <span
+                class="material-symbols-outlined text-white text-xl font-bold"
+                >bolt</span
+              >
+            </div>
+            <h2
+              class="text-white text-xl font-bold tracking-tighter uppercase font-display"
+            >
+              Rot<span class="text-primary">Front</span>
+            </h2>
+          </div>
+          <p class="text-white/40 text-sm leading-relaxed mb-6">
+            Симулятор кибервосстания, ориентированный на тактическую стратегию и
+            системное восстание..
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="text-white/40 hover:text-primary transition-colors"
+              href="mailto:ROTFRONTGAME@yandex.by"
+              ><span class="material-symbols-outlined">email</span></a
+            >
+            <a
+              class="text-white/40 hover:text-primary transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">forum</span></a
+            >
+            <a
+              class="text-white/40 hover:text-primary transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">videocam</span></a
+            >
+          </div>
+        </div>
+        <div class="md:col-span-1">
+          <h4
+            class="text-white text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            Манифест
+          </h4>
+          <ul class="flex flex-col gap-4">
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Наше видение</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Кодекс знаний</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Происхождение персонажа</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-1">
+          <h4
+            class="text-white text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            Технический
+          </h4>
+          <ul class="flex flex-col gap-4">
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Награда за ошибки</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Системные требования</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Примечания к бета-патчу</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-1">
+          <h4
+            class="text-white text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            Юридический
+          </h4>
+          <ul class="flex flex-col gap-4">
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Правила протокола</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/40 hover:text-white text-sm transition-colors"
+                href="#"
+                >Шифрование конфиденциальности</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto border-t border-border-dark mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-white/20 text-xs uppercase tracking-widest">
+          © 2026 RotFront Tactical Systems. All rights encrypted.
+        </p>
+        <div class="flex gap-8">
+          <span
+            class="text-primary text-[10px] font-bold uppercase tracking-widest"
+            >Сигнал стабильный</span
+          >
+          <span
+            class="text-white/20 text-[10px] font-bold uppercase tracking-widest"
+            >Версия b1.1.00</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
